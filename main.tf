@@ -43,4 +43,16 @@ resource "aws_security_group" "sg" {
 
 }
 
+resource "aws_instance" "dbserver" {
+  ami                    = "ami-0d13e3e640877b0b9"
+  instance_type          = "t2.micro"
+  key_name               = "mumbai-new"
+  vpc_security_group_ids = [aws_security_group.sg.id]
+  tags = {
+    "Name"    = "${var.project_name}-${var.project_env}-dbserver",
+    "project" = var.project_name,
+    "env"     = var.project_env
+  }
+}
+
 
