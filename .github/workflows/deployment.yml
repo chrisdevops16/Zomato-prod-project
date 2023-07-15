@@ -10,26 +10,26 @@ jobs:
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       AWS_REGION: ${{ secrets.AWS_REGION }}
 
-  steps:
-    - name: Checkout terraform code
-      uses: actions/checkout@v3
+    steps:
+      - name: Checkout terraform code
+        uses: actions/checkout@v3
 
-    - name: Terraform installation
-      uses: hashicorp/setup-terraform@v2
-      with:
-        terraform_version: 1.5.3
-    - name: Running terraform fmt
-      run: terraform fmt
-      working_directory: .
-    - name: Running terraform init
-      run: terraform init
-      working_directory: .
-    - name: Running Terraform validate
-      run: terraform validate
-      working_directory: .
-    - name: Running terraform plan
-      run: terraform plan
-      working_directory: .
-    - name: Running Terraform apply
-      run: terraform apply -auto-approve
-      working_directory: .
+      - name: Terraform installation
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.5.3
+      - name: Running terraform fmt
+        run: terraform fmt
+        working_directory: .
+      - name: Running terraform init
+        run: terraform init
+        working_directory: .
+      - name: Running Terraform validate
+        run: terraform validate
+        working_directory: .
+      - name: Running terraform plan
+        run: terraform plan
+        working_directory: .
+      - name: Running Terraform apply
+        run: terraform apply -auto-approve
+        working_directory: .
