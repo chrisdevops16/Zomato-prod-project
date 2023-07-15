@@ -20,16 +20,16 @@ jobs:
           terraform_version: 1.5.3
       - name: Running terraform fmt
         run: terraform fmt
-        working_directory: .
+        working-directory: .
       - name: Running terraform init
         run: terraform init
-        working_directory: .
+        working-directory: .
       - name: Running Terraform validate
         run: terraform validate
-        working_directory: .
+        working-directory: .
       - name: Running terraform plan
         run: terraform plan
-        working_directory: .
+        working-directory: .
       - name: Running Terraform apply
         run: terraform apply -auto-approve
-        working_directory: .
+        working-directory: .
